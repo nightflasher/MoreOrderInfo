@@ -26,8 +26,7 @@
                     </div>
                 {/block}
 
- 
-                {block name="frontend_account_order_item_payment_value"}
+                 {block name="frontend_account_order_item_payment_value"}
                     <div class="column--value">
                         {if $offerPosition.paymentID == '2' OR $offerPosition.paymentID == '6'}
                             {s name="payment_options_sepa_label" namespace="themes/views/backend/config"}{/s}
@@ -86,8 +85,9 @@
                                 {$offerPosition.stateName|snippet:$snippetName:'frontend/account/order_item'}
                             {/block}
                         {/if}
+                    </div> 
 
-                        <div class="column--value"> </div>
+                    <div class="column--value">
                         <span class="payment--status-icon status--{$offerPosition.cleared}">&nbsp;</span>
                         {if $offerPosition.cleared==9}
                         	{s name="partially_invoiced" namespace="backend/static/payment_status"}{/s}
@@ -112,7 +112,7 @@
                         {elseif $offerPosition.cleared==21}
                         	{s name="review_necessary" namespace="backend/static/payment_status"}{/s}
                         {/if}	
-                        </div>
+                    </div>
                  {/block}
             </div>
         {/block}
